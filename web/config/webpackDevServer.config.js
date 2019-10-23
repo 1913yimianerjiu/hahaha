@@ -81,8 +81,22 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
-    proxy,
-
+    proxy:{
+      '/yapi':{
+        target:'http://10.60.14.207:3000',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/yapi':''
+        }
+      },
+      '/admin':{
+        target:'http://localhost:3000',
+        changeOrigin:true,
+        // pathRewrite:{
+        //   '^/admin':''
+        // }
+      },
+    },
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons

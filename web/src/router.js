@@ -35,7 +35,7 @@ class RootRouter extends Component{
           <Route path='/admin' render={() => {
             return (
               <Admin>
-                {/* <Route path='/admin/setting' component={Setting}/> */}
+                <Redirect exact from='/admin' to='/admin/home'/>                
                 <Route path='/admin/home' component={Home}/>
                 <Route path='/admin/classify/movie' component={Movie}/>
                 <Route path='/admin/classify/drama' component={Drama}/>
