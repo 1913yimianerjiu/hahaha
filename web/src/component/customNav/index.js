@@ -65,8 +65,8 @@ class CustomNav extends Component{
   render() {
     console.log(this,'自定义导航')
     return (
-      <div className="home">
-         <Menu style={{ width: 256 }} mode="vertical"
+      <div className="nav">
+         <Menu style={{ width: 220,background:'rgb(255, 255, 255)',color:'orange'}} mode="vertical"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
             mode="inline"
