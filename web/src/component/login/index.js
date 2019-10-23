@@ -58,12 +58,12 @@ class Login extends React.Component {
               )}
                 
             </Form.Item>
-            <Form.Item>
+            <Form.Item >
               <Checkbox>Remember me</Checkbox>
               <a className="login-form-forgot" href="">
                 Forgot password
-              </a>
-              <Button type="primary" onClick={this.submit} className="login-form-button">
+              </a><br/>
+              <Button style={{marginLeft:'80px',marginRight:'10px'}} type="primary" onClick={this.submit} className="login-form-button">
                 Log in
               </Button>
               Or <a href="">register now!</a>
