@@ -18,7 +18,10 @@ class Admin extends Component{
 
           <div className="admin-content">
             <div className="admin-content-middle">
-              {this.props.children}
+              <div>
+                {this.props.children}
+              </div>
+              
             </div>
             <div className="admin-content-foot">
               <p>xxxx出品  @12345版本信息</p>
