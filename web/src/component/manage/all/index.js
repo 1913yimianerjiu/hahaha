@@ -3,61 +3,6 @@ import {Card,Table,Spin,Pagination,Button,type,Popconfirm,Input} from 'antd'
 import { Item } from 'rc-menu';
 const { Search } = Input;
 
-
-// var columns = [
-//   {
-//     title: '名称',
-//     width:100,
-//     dataIndex: 'name',
-//     key: 'name',
-//     fixed:'left'
-//   },
-//   {
-//     title: '价格',
-//     width:100,
-//     dataIndex: 'price',
-//     key: 'price',
-//   },
-//   {
-//     title: '类型',
-//     width:100,
-//     dataIndex: 'foodType',
-//     key: 'foodType',
-//   },
-//   {
-//     title: '图片',
-//     width:100,
-//     dataIndex: 'imgPath', 
-//     key: 'img',
-//     render(imgpath){
-//       return(
-//         <img src={imgpath} width='50' height='50' alt=""/>
-//       )
-//     }
-//   },
-//   {
-//     title: '操作',
-//     width:150,
-//     fixed:'right',
-//     key: 'action',
-//     render:(data)=>{
-//       return(
-//         <div>
-//           <Popconfirm 
-//             title='你确定要删除吗？'
-//             onConfirm={()=>{
-//               console.log('删除',data,this)
-//               console.list(22222)
-//               this.del(data._id)
-//             }}>
-//           <button size='small' type='danger'>删除</button>
-//           </Popconfirm>
-//           <button size='small' type='primary'>修改</button>
-//         </div>
-//       )
-//     }, 
-//   }
-// ]
 class All extends Component{
   constructor(){
     super()
@@ -81,18 +26,6 @@ class All extends Component{
         dataIndex: 'foodType',
         key: 'foodType',
       },
-   
-      // {
-      //   title: '导演',
-      //   width:100,
-      //   dataIndex: 'imgPath', 
-      //   key: 'img',
-      //   render(imgpath){
-      //     return(
-      //       <img src={imgpath} width='50' height='50' alt=""/>
-      //     )
-      //   }
-      // },
       {
         title: '图片',
         width:100,
