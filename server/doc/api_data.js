@@ -24,7 +24,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "img",
             "optional": false,
             "field": "imPath",
             "description": "<p>图片</p>"
@@ -95,7 +95,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "img",
             "optional": false,
             "field": "imPath",
             "description": "<p>图片</p>"
@@ -251,7 +251,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "img",
             "optional": false,
             "field": "imPath",
             "description": "<p>图片</p>"
@@ -322,7 +322,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "img",
             "optional": false,
             "field": "imPath",
             "description": "<p>图片</p>"
@@ -347,6 +347,20 @@ define({ "api": [
     "success": {
       "fields": {
         "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>一页多少条</p>"
+          },
           {
             "group": "Success 200",
             "type": "Number",
@@ -400,7 +414,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "img",
             "optional": false,
             "field": "imPath",
             "description": "<p>图片</p>"
@@ -652,6 +666,13 @@ define({ "api": [
             "optional": false,
             "field": "msg",
             "description": "<p>msg.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>验证码</p>"
           }
         ]
       }

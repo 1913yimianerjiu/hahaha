@@ -11,7 +11,7 @@ router.get('/getFoods',(req,res)=>{
 // 分页+分类
 router.get('/getFoodsByPage',(req,res)=>{
     let page=req.query.page||1
-    let pageSize=req.query.pageSize||3
+    let pageSize=req.query.pageSize||6
     let count=0
     let foodType=req.query.foodType
     let obj={}

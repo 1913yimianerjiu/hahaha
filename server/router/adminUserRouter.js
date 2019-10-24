@@ -99,6 +99,7 @@ router.get('/reg',(req,res,next)=>{
  *
  * @apiSuccess {Number} err 状态码
  * @apiSuccess {String} msg  msg.
+ * @apiSuccess {Number} code  验证码 
  */
 
 /**
@@ -121,7 +122,7 @@ router.get('/reg',(req,res,next)=>{
  *
  * @apiParam {String} name 名字
  * @apiParam {String} price 价格
- * @apiParam {String} imPath 图片
+ * @apiParam {img} imPath 图片
  * @apiParam {String} foodType 类型
  * @apiParam {String}  desc   简介
  * 
@@ -137,9 +138,12 @@ router.get('/reg',(req,res,next)=>{
  *
  * @apiParam {String} name 名字
  * @apiParam {String} price 价格
- * @apiParam {String} imPath 图片
+ * @apiParam {img} imPath 图片
  * @apiParam {String} foodType 类型
  * @apiParam {String}  desc   简介
+ * @apiSuccess {Number} page  页数
+ * @apiSuccess {Number} pageSize   一页多少条
+ * 
  * 
  * @apiSuccess {Number} err 状态码
  * @apiSuccess {String} msg  msg
@@ -154,7 +158,7 @@ router.get('/reg',(req,res,next)=>{
  *
  * @apiParam {String} name 名字
  * @apiParam {String} price 价格
- * @apiParam {String} imPath 图片
+ * @apiParam {img} imPath 图片
  * @apiParam {String} foodType 类型
  * @apiParam {String}  desc   简介
  * 
@@ -170,7 +174,7 @@ router.get('/reg',(req,res,next)=>{
  *
  * @apiParam {String} name 名字
  * @apiParam {String} price 价格
- * @apiParam {String} imPath 图片
+ * @apiParam {img} imPath 图片
  * @apiParam {String} foodType 类型
  * @apiParam {String}  desc   简介
  * @apiParam {String}  _id   _id
@@ -204,7 +208,7 @@ router.get('/reg',(req,res,next)=>{
  *
  * @apiParam {String} name 名字
  * @apiParam {String} price 价格
- *  @apiParam {String} imPath 图片
+ * @apiParam {img} imPath 图片
  * @apiParam {String} foodType 类型
  * @apiParam {String}  desc   简介
  * @apiParam {String}  _id   _id
@@ -228,8 +232,8 @@ let {us,ps}=req.query
 UserModel.findOne({us,ps})
 .then((data)=>{
     if(data){
-       let token=jwt.createToken({uid:data._id},7*24*60*60)
-       res.send({err:0,msg:'login ok',token:token}) 
+    //    let token=jwt.createToken({uid:data._id},7*24*60*60)
+       res.send({err:0,msg:'login ok',}) 
     }else{
         res.send({err:-2,msg:'login no ok'}) 
     }
