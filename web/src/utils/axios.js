@@ -13,7 +13,6 @@ axios.interceptors.request.use(function (config) {
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
-
   // let action=actionCreator.changeTokenModal(true)
   // store.dispatch(action)
   return response.data;

@@ -81,18 +81,6 @@ class All extends Component{
         dataIndex: 'foodType',
         key: 'foodType',
       },
-   
-      // {
-      //   title: '导演',
-      //   width:100,
-      //   dataIndex: 'imgPath', 
-      //   key: 'img',
-      //   render(imgpath){
-      //     return(
-      //       <img src={imgpath} width='50' height='50' alt=""/>
-      //     )
-      //   }
-      // },
       {
         title: '图片',
         width:100,
