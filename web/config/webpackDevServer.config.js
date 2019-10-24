@@ -88,7 +88,14 @@ module.exports = function(proxy, allowedHost) {
         pathRewrite:{
           '^/yapi':''
         }
-      }
+      },
+      '/admin':{
+        target:'http://localhost:3000',
+        changeOrigin:true,
+        // pathRewrite:{
+        //   '^/admin':''
+        // }
+      },
     },
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {

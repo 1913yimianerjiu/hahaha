@@ -52,7 +52,7 @@ class CustomNav extends Component{
   renderItem = (data) => {
     return data.map((item,index) => {
       if(item.children) {
-        return (
+        return ( 
           <SubMenu title={item.name}>
             {this.renderItem(item.children)}
           </SubMenu>

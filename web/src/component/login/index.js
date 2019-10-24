@@ -5,23 +5,29 @@ import './index.less'
 class Login extends React.Component {
   submit = () => {
     console.log('登录')
-    // let result = this.props.form.getFieldsValue()
-    // console.log(result)
+    let result = this.props.form.getFieldsValue()
+    console.log(result,'login')
     this.props.form.validateFields((err,data) => {
       if(err) {
         message.error('输入信息有误，请重试')
       } else {
         this.$axios.get('/yapi/admin/user/login',{
-          params: {
-            us:'1027393479@qq.com',
-            ps:'123'
-          }
+          params: result
+          // {
+          //   us:'1027393479@qq.com',
+          //   ps:'123'
+          // }
         })
         .then((data) => {
           console.log(data)
-          message.success('登陆成功，1s后跳转首页',1,() => {
-            this.props.history.push('/admin')
-          })
+          if(data.err === 0){
+            message.success('登陆成功，1s后跳转首页',1,() => {
+              this.props.history.push('/admin')
+            })
+          } else {
+            message.error('用户名或密码有误，请重试')
+          }
+          
         })
       }
       console.log(err,data)

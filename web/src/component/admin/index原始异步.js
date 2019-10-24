@@ -7,14 +7,17 @@ import {bindActionCreators} from 'redux'
 import ActionCreator from '../../store/actionCreator'
 class Admin extends Component{
   componentDidMount() {
-    this.props.changeTokenModalAsync()
-    // setTimeout(()=>{
-    //   this.props.changeTokenModal(true)      
-    // },1000)
+    setTimeout(() => {
+      if(false) {
+
+      }else {
+        this.props.changeTokenModal(true)
+      }
+    },1000)
   }
   render() {
     console.log(this,'admin')
-    return ( 
+    return (
       <div className="admin">
         <TokenModel></TokenModel>
         <div className="admin-top">
