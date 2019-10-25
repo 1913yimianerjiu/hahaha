@@ -2,44 +2,68 @@ import React,{Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import {Menu,Icon} from 'antd'
 
-let navData = [
-  {name:'首页',path:'/admin/home'},
-  {name:'产品分类',
-   path:'/admin/classify',
-   children:[
-    {name:'电影',path:'/admin/classify/movie'},
-    {name:'话剧',path:'/admin/classify/drama'},
-    {name:'曲苑杂坛',path:'/admin/classify/show'},
-  ]
-  },
-  {name:'产品管理',
-   path:'/admin/manage',
-   children:[
-    {name:'查看所有',path:'/admin/manage/all'},
-    {name:'新增产品',path:'/admin/manage/add'},
-  ]
-  },
-  {name:'统计数据',
-  path:'/admin/statistic',
-  children:[
-   {name:'浏览量趋势',path:'/admin/statistic/browse'},
-   {name:'热度分析',path:'/admin/statistic/hot'},
-  ]
-  },
-  {name:'系统设置',
-  path:'/admin/system',
-  children:[
-   {name:'字体设置',path:'/admin/setting/font'},
-   {name:'一键换肤',path:'/admin/setting/themeColor'},
-  ]
-  },
-]
+// import {lang} from ''
+import {zh,en,fa} from '../../lang/yyb'
+
 
 const {SubMenu} = Menu
+let navData = []
+let yyb = {}
 
 class CustomNav extends Component{
   state = {
     collapsed: false,
+  }
+  
+  componentDidMount(){
+    console.log(localStorage.getItem("y"));
+    //通过key来获取value
+     localStorage.setItem("y", "2");
+    var dt = localStorage.getItem("y");
+    if(dt === '2'){
+      yyb = JSON.parse(JSON.stringify(en))
+      
+    }else if(dt === '3'){
+      yyb = JSON.parse(JSON.stringify(fa))          
+    }else{
+      yyb = JSON.parse(JSON.stringify(zh))
+
+    }
+  
+    navData = [
+      {name:yyb.a,path:'/admin/home'},
+      {name:yyb.b,
+       path:'/admin/classify',
+       children:[
+        {name:yyb.f,path:'/admin/classify/movie'},
+        {name:yyb.g,path:'/admin/classify/drama'},
+        {name:yyb.h,path:'/admin/classify/show'},
+      ]
+    
+      },
+      {name:yyb.c,
+       path:'/admin/manage',
+       children:[
+        {name:yyb.i,path:'/admin/manage/all'},
+        {name:yyb.j,path:'/admin/manage/add'},
+      ]
+      },
+      {name:yyb.d,
+      path:'/admin/statistic',
+      children:[
+       {name:yyb.k,path:'/admin/statistic/browse'},
+       {name:yyb.l,path:'/admin/statistic/hot'},
+      ]
+      },
+      {name:yyb.e,
+      path:'/admin/system',
+      children:[
+       {name:yyb.m,path:'/admin/setting/font'},
+       {name:yyb.n,path:'/admin/setting/themeColor'},
+      ]
+      }
+    ]
+
   }
   toggleCollapsed = () => {
     this.setState({
@@ -52,7 +76,7 @@ class CustomNav extends Component{
   renderItem = (data) => {
     return data.map((item,index) => {
       if(item.children) {
-        return ( 
+        return (
           <SubMenu title={item.name}>
             {this.renderItem(item.children)}
           </SubMenu>
