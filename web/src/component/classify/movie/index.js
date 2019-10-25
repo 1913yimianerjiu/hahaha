@@ -243,7 +243,7 @@ class Movie extends Component{
     }
     render() {
         return (
-            <div className="drama" style={{background:'white'}}>
+            <div className="movie" style={{background:'white'}}>
                 <List
                     itemLayout="vertical"
                     size="large"
