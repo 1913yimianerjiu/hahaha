@@ -11,7 +11,7 @@ export default {
     return (dispatch) => {
       let action = {type:'CHANGE_TOKEN_MODAL'}
       setTimeout(() => {
-        let showModal = true
+        let showModal = false
         action.params = showModal
         dispatch(action)
       },1000)

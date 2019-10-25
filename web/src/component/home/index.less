@@ -1,8 +1,9 @@
 .home{
   width:100%;
-  height:600px;
+  height:700px;
+  background: pink ;
   background:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571812872576&di=fec2e9a17208ee9eb92a10fbe3305e3b&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0384f1755dea28800000159951d6aec.jpg');
-  background-size:100% 100%;
+  background-size:cover;
   position: relative;
   .model{
     width:100%;
@@ -11,10 +12,12 @@
     opacity: .5;
   }
   p{
-    position: absolute;
-    left: 300px;
-    top:250px;
     font-size:50px;
     color:#3D1414;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform:translateX(-50%);
+    // transform:translateY(-50%);
   }
 }
