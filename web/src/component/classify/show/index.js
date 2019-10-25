@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { List, Avatar, Icon } from 'antd';
+import axios from "axios";
 
 const listData = [{
     foodType: 'https://www.dytt8.net/html/gndy/dyzz/20191017/59271.html',
@@ -41,10 +42,36 @@ const listData = [{
 //       {text}
 //   </span>
 // );
-class Movie extends Component{
+class Show extends Component{
+    constructor(){
+        super()
+        this.state={
+            listData:[],
+            isLoaded:false
+        }
+    }
+    componentDidMount(){
+        const _this=this;    //先存一下this，以防使用箭头函数this会指向我们不希望它所指向的对象。
+        axios.get('http://localhost:3000/admin/food/getFoods')
+            .then(function (response) {
+                _this.setState({
+                    listData:response.list,
+                    isLoaded:true
+                });
+                console.log(_this.state.listData)
+                console.log(_this)
+            })
+            .catch(function (error) {
+                console.log(error);
+                _this.setState({
+                    isLoaded:false,
+                    error:error
+                })
+            })
+    }
     render() {
         return (
-            <div className="show" style={{background:'white'}}>
+            <div className="drama" style={{background:'white'}}>
                 <List
                     itemLayout="vertical"
                     size="large"
@@ -54,14 +81,14 @@ class Movie extends Component{
                         },
                         pageSize: 3,
                     }}
-                    dataSource={listData}
+                    dataSource={this.state.listData.slice(25,30)}
                     renderItem={item => (
                         <List.Item
                             key={item.name}
                             extra={
                                 <img
                                     width={200}
-                                    height={220}
+                                    height={250}
                                     alt="logo"
                                     src={item.imgPath}
                                 />
@@ -80,4 +107,4 @@ class Movie extends Component{
     }
 }
 
-export default Movie
+export default Show
