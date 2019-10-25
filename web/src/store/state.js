@@ -1,5 +1,5 @@
 export default {
-  tokenModel:false
+  tokenModal:false
 }
 
 // export default{

@@ -7,12 +7,12 @@ import './index.less'
 class TokenModal extends Component{
   render() {
     console.log(this,'modal')
-    let {TokenModal} = this.props
+    let {tokenModal} = this.props
     return (
       <Fragment>
-        {!TokenModal||
+        {!tokenModal||
         <div className="token-modal">
-          <Card title="token失效">
+          <Card style={{width:'300px',height:'200px',margin:'0 auto',marginTop:'100px'}} title="token失效">
             token丢失或者失效,请重新登录
             <button onClick={() => {
                 this.props.history.push('/login')
