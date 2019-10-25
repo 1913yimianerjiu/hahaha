@@ -90,11 +90,7 @@ module.exports = function(proxy, allowedHost) {
         }
       },
       '/admin':{
-<<<<<<< HEAD
-        target:'http://localhost:3000',
-=======
         target:'http://10.60.14.207:3000',
->>>>>>> 5e9581686739e33a5322befba723e5a75601e6c5
         changeOrigin:true,
         // pathRewrite:{
         //   '^/admin':''
