@@ -105,7 +105,7 @@ class Drama extends Component{
         axios.get('http://localhost:3000/admin/food/getFoods')
             .then(function (response) {
                 _this.setState({
-                    listData:response.list,
+                    listData:response.list.filter(item=>{return item.foodType === "话剧"}),
                     isLoaded:true
                 });
                 console.log(_this.state.listData)
@@ -132,7 +132,7 @@ class Drama extends Component{
                             },
                             pageSize: 3,
                         }}
-                        dataSource={this.state.listData.filter(item=>{return item.foodType === "话剧"})}
+                        dataSource={this.state.listData}
                         renderItem={item => (
                             <List.Item
                                 key={item.name}
