@@ -18,7 +18,7 @@ class CustomNav extends Component{
   componentDidMount(){
     console.log(localStorage.getItem("y"));
     //通过key来获取value
-     localStorage.setItem("y", "2");
+     localStorage.setItem("y", "1");
     var dt = localStorage.getItem("y");
     if(dt === '2'){
       yyb = JSON.parse(JSON.stringify(en))
