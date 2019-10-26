@@ -120,6 +120,7 @@ class Drama extends Component{
             })
     }
     render() {
+
             return (
                 <div className="drama" style={{background:'white'}}>
                     <List
@@ -131,7 +132,7 @@ class Drama extends Component{
                             },
                             pageSize: 3,
                         }}
-                        dataSource={this.state.listData.slice(13,25)}
+                        dataSource={this.state.listData.filter(item=>{return item.foodType === "话剧"})}
                         renderItem={item => (
                             <List.Item
                                 key={item.name}
